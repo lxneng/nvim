@@ -69,6 +69,8 @@
   let NERDTreeQuitOnOpen=1
   let NERDTreeShowHidden=1
   let g:ycm_autoclose_preview_window_after_completion=1
+  let g:ycm_key_list_select_completion = ['<C-n>', '<C-j>', '<Down>']
+  let g:ycm_key_list_previous_completion = ['<C-p>', '<C-k>', '<Up>']
   let g:syntastic_check_on_open=1
 
 " }}}
