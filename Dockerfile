@@ -1,10 +1,6 @@
 # docker build -t nvim .
-# docker run --rm -it -v $(pwd):/src nvim
 # alias nvim='docker run --rm -it -v $(pwd):/src nvim'
 FROM ubuntu:18.04
-
-ENV TERM screen-256color
-ENV DEBIAN_FRONTEND noninteractive
 
 # Update and install
 RUN apt-get update && apt-get install -y \
@@ -32,9 +28,24 @@ RUN apt-get update && apt-get install -y \
 
 RUN pip3 install -U neovim
 
-COPY . /root/.config/nvim
+ENV NEOVIM_USER nvim
+ENV NEOVIM_UID 1000
+ENV HOME /home/$NEOVIM_USER
+
+RUN useradd -m -s /bin/bash -u $NEOVIM_UID $NEOVIM_USER && \
+    mkdir -p /src && \
+    chown $NEOVIM_USER /src && \
+    mkdir -p $HOME/.config/nvim && \
+    chown $NEOVIM_USER $HOME/.config/nvim
+
+USER $NEOVIM_USER
+
+ENV TERM screen-256color
+ENV DEBIAN_FRONTEND noninteractive
+
+COPY . $HOME/.config/nvim
 RUN nvim +PlugInstall +qa
-RUN /root/.config/nvim/plugged/YouCompleteMe/install.py
+RUN $HOME/.config/nvim/plugged/YouCompleteMe/install.py
 
 WORKDIR /src
 
