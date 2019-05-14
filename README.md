@@ -18,8 +18,17 @@ fi
 
 ## Dockerize
 
+Build from repo.
+
 ```
 docker build -t nvim .
 docker run --rm -it -v $(pwd):/src nvim
 alias nvim='docker run --rm -it -v $(pwd):/src nvim'
+```
+
+Pull from dockerhub
+
+```
+docker pull lxneng/nvim
+alias nvim='docker run --rm -it -v $(pwd):/src lxneng/nvim'
 ```
