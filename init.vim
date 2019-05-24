@@ -21,9 +21,6 @@
   set textwidth=80
   set colorcolumn=81
 
-  " colorscheme molokai256
-  colorscheme solarized
-
   syntax on
   filetype on
   filetype plugin indent on
@@ -57,10 +54,13 @@
   Plug 'SirVer/ultisnips'
   Plug 'honza/vim-snippets'
   Plug 'Shougo/unite.vim'
+  Plug 'morhetz/gruvbox'
 
   call plug#end()
 
 " }}}
+
+  colorscheme gruvbox
 
 " Plugin hettings {{{
 
