@@ -55,6 +55,7 @@
   Plug 'honza/vim-snippets'
   Plug 'Shougo/unite.vim'
   Plug 'morhetz/gruvbox'
+  Plug 'posva/vim-vue'
 
   call plug#end()
 
