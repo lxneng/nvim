@@ -1,5 +1,5 @@
 " Basic settings {{{
-  set spell spelllang=en_us
+  " set spell spelllang=en_us
   set encoding=utf-8
 
   set number
@@ -63,7 +63,7 @@
 
   colorscheme gruvbox
 
-" Plugin hettings {{{
+" Plugin settings {{{
 
   " Hide .pyc, .html.py in nerdtree
   let NERDTreeIgnore = ['\.pyc$', '\.html.py$', '\.egg-info$', '__pycache__']
@@ -74,6 +74,10 @@
   let g:ycm_key_list_previous_completion = ['<C-p>', '<C-k>', '<Up>']
   let g:syntastic_check_on_open=1
 
+  " let g:airline_theme="solarized"
+  let g:airline_powerline_fonts=1
+  let g:airline#extensions#tabline#enabled=1
+
 " }}}
 
 
@@ -83,6 +87,10 @@
   nmap <Leader>p :Files<CR>
   nmap <Leader>o :Buffers<CR>
   nmap <Leader>l :Lines<CR>
+
+  " buffer switch
+  nnoremap <C-N> :bn<CR>
+  nnoremap <C-P> :bp<CR>
 
   map <C-e> :NERDTreeToggle<CR>:NERDTreeMirror<CR>
   nnoremap <silent><Leader>, :Unite -silent buffer<CR>
