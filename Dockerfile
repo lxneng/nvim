@@ -13,8 +13,6 @@ RUN apt-get update && apt-get install -y \
       python3-pip \
       ctags \
       locales \
-      # For Youcompleteme
-      cmake
 
 RUN locale-gen en_US.UTF-8
 ENV LANG en_US.UTF-8
@@ -45,7 +43,6 @@ ENV DEBIAN_FRONTEND noninteractive
 
 COPY . $HOME/.config/nvim
 RUN nvim +PlugInstall +qa
-RUN $HOME/.config/nvim/plugged/YouCompleteMe/install.py
 
 WORKDIR /src
 
