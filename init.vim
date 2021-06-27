@@ -45,7 +45,7 @@
   Plug 'tpope/vim-surround'
   Plug 'tpope/vim-markdown'
   Plug 'Vimjas/vim-python-pep8-indent'
-  Plug 'Valloric/YouCompleteMe'
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'tmhedberg/SimpylFold'
   Plug 'Raimondi/delimitMate'
   Plug 'mhinz/vim-startify'
@@ -69,10 +69,9 @@
   let NERDTreeIgnore = ['\.pyc$', '\.html.py$', '\.egg-info$', '__pycache__']
   let NERDTreeQuitOnOpen=1
   let NERDTreeShowHidden=1
-  let g:ycm_autoclose_preview_window_after_completion=1
-  let g:ycm_key_list_select_completion = ['<C-n>', '<C-j>', '<Down>']
-  let g:ycm_key_list_previous_completion = ['<C-p>', '<C-k>', '<Up>']
-  let g:syntastic_check_on_open=1
+
+  " coc settings
+  let g:coc_global_extensions = ['coc-pyright', 'coc-solargraph', 'coc-rls', 'coc-go', 'coc-css', 'coc-html']
 
   " let g:airline_theme="solarized"
   let g:airline_powerline_fonts=1
