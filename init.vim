@@ -58,6 +58,7 @@
   Plug 'posva/vim-vue'
   Plug 'cespare/vim-toml'
   Plug 'lepture/vim-jinja'
+  Plug 'github/copilot.vim'
 
   call plug#end()
 
