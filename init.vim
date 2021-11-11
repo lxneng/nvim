@@ -56,6 +56,8 @@
   Plug 'Shougo/unite.vim'
   Plug 'morhetz/gruvbox'
   Plug 'posva/vim-vue'
+  Plug 'cespare/vim-toml'
+  Plug 'lepture/vim-jinja'
 
   call plug#end()
 
@@ -64,6 +66,8 @@
   colorscheme gruvbox
 
 " Plugin settings {{{
+
+  autocmd BufNewFile,BufRead *.tera set ft=jinja
 
   " Hide .pyc, .html.py in nerdtree
   let NERDTreeIgnore = ['\.pyc$', '\.html.py$', '\.egg-info$', '__pycache__']
