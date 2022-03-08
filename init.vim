@@ -59,6 +59,7 @@
   Plug 'cespare/vim-toml'
   Plug 'lepture/vim-jinja'
   Plug 'github/copilot.vim'
+  Plug 'nathangrigg/vim-beancount'
 
   call plug#end()
 
